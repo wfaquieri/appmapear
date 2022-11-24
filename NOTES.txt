@@ -1,0 +1,29 @@
+ * PRÓXIMOS PASSOS
+
+Realizei testes para melhorar o desempenho da consulta. O melhor resultado foi 35 sec. 
+Vide R script APP_TEST_3 > folder cons-cnpj-3
+Parei aqui bs4Dash::bar_progress... 
+Waiting for the query to complete...
+
+-Definir tabela final - incluir cnpj_full;
+-(DONE)Criar módulo de consulta apenas 1 CNAE & 1 UF;
+-(DONE)Criar modulo de consulta varias cnaes e UF e Municipios <- script 'APP-TEST.R' <- folder: cons-cnpj-3
+-(DONE)Alterar o filtro de UF;
+-(DONE)Atualizar texto do About;
+-Overview: quantitativos?
+-(DONE)Incluir tabela completa de cnaes;
+-dicionário de variáveis;
+-incluir autenticação;
+-Testar implantação na TS SPDO.
+
+---
+
+Leituras:
+
+> https://datacarpentry.org/R-ecology-lesson/05-r-and-databases.html#Creating_a_new_SQLite_database
+
+> https://engineering-shiny.org/build-app-golem.html
+
+> https://towardsdatascience.com/production-grade-r-shiny-with-golem-prototyping-51b03f37c2a9
+
+> https://golemverse.org/
