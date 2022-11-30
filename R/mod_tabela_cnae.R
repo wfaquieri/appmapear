@@ -29,7 +29,7 @@ mod_tabela_cnae_ui <- function(id) {
 #' tabela_cnae Server Functions
 #'
 #' @noRd
-mod_tabela_cnae_server <- function(id) {
+mod_tabela_cnae_server <- function(id, res_auth) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
 

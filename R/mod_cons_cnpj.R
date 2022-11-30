@@ -1,4 +1,4 @@
-#' cons_cnae_uf UI Function
+#' cons_cnpj UI Function
 #'
 #' @description A shiny Module.
 #'
@@ -7,7 +7,7 @@
 #' @noRd
 #'
 #' @importFrom shiny NS tagList
-mod_cons_cnae_uf_ui <- function(id){
+mod_cons_cnpj_ui <- function(id){
   ns <- NS(id)
   tagList(
     bs4Dash::bs4Card(
@@ -18,21 +18,14 @@ mod_cons_cnae_uf_ui <- function(id){
       width = 4,
       icon = icon("fa-solid fa-filter"),
 
-      # FILTRO CNAE
-      selectizeInput(
-        inputId = ns("cnaeID"),
-        "CNAE:",
-        choices = NULL,
-        multiple = T
-      ),
-
       # FILTRO UF
-      helpText("Digite a UF de interesse. (Exemplo: SP)"),
-      selectizeInput(
-        inputId = ns("stateID"),
-        "UF:",
-        choices = NULL,
-        multiple = F
+      helpText("Digite o CNPJ de interesse: (Exemplo: 29593377000183)"),
+      textInput(
+        inputId = ns("cnpjID"),
+        "CNPJ:",
+        value = "",
+        width = NULL,
+        placeholder = NULL
       ),
 
       # BOTÃO PESQUISAR
@@ -47,30 +40,12 @@ mod_cons_cnae_uf_ui <- function(id){
   )
 }
 
-#' cons_cnae_uf Server Functions
+#' cons_cnpj Server Functions
 #'
 #' @noRd
-mod_cons_cnae_uf_server <- function(id, res_auth){
+mod_cons_cnpj_server <- function(id, res_auth){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
-
-    updateSelectizeInput(
-      session,
-      "cnaeID",
-      "Atividade Econômica",
-      choices = sort(unique(df_cnae$cnae_descr)),
-      selected = sort(unique(df_cnae$cnae_descr))[1],
-      server = TRUE
-    )
-
-    updateSelectizeInput(
-      session,
-      "stateID",
-      "UF",
-      choices = sort(unique(uf_cities$uf)),
-      selected = sort(unique(uf_cities$uf))[1],
-      server = TRUE
-    )
 
     observeEvent(input$goButton1, {
 
@@ -78,9 +53,8 @@ mod_cons_cnae_uf_server <- function(id, res_auth){
 
         query_sql <-
           glue::glue_sql(
-            "SELECT * FROM mvp_cons WHERE cnae_descr IN ({cnaes*}) AND uf IN ({states*})",
-            cnaes = input$cnaeID,
-            states = input$stateID,
+            "SELECT * FROM mvp_cons WHERE cnpj IN ({cnpjs*})",
+            cnpjs = input$cnpjID,
             .con = conn
           )
 
@@ -102,4 +76,3 @@ mod_cons_cnae_uf_server <- function(id, res_auth){
     })
   })
 }
-

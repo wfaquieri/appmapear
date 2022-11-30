@@ -48,15 +48,7 @@ mod_cons_cnae_cidades_ui <- function(id){
         ),
 
         # BOTÃO PESQUISAR
-        actionButton(inputId = ns("goButton1"), "Pesquisar"),
-        br(),
-        br(),
-        shinyWidgets::progressBar(
-          id = ns("pb4"),
-          value = 0,
-          display_pct = T
-
-        )
+        actionButton(inputId = ns("goButton1"), "Pesquisar")
       ),
 
       # TABELA
@@ -73,18 +65,11 @@ mod_cons_cnae_cidades_ui <- function(id){
 #' cons_cnae_cidades Server Functions
 #'
 #' @noRd
-mod_cons_cnae_cidades_server <- function(id){
+mod_cons_cnae_cidades_server <- function(id, res_auth){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
 
-    con <- DBI::dbConnect(
-      RPostgres::Postgres(),
-      dbname = db,
-      host = db_host,
-      port = db_port,
-      user = db_user,
-      password = db_pass
-    )
+
 
     updateSelectizeInput(
       session,
@@ -124,11 +109,7 @@ mod_cons_cnae_cidades_server <- function(id){
     })
 
     observeEvent(input$goButton1, {
-      # maxi <- 50
-      # for (i in 1:maxi) {
-      #   shinyWidgets::updateProgressBar(session = session,
-      #                                   id = "pb4",
-      #                                   value = (i / maxi) * 100)
+
       data <-  reactive({
         query_sql <-
           glue::glue_sql(
@@ -136,8 +117,15 @@ mod_cons_cnae_cidades_server <- function(id){
             cnaes = input$cnaeID,
             states = input$stateID,
             names = input$select,
-            .con = con
+            .con = conn
           )
+
+        id <- showNotification("Executando a query...",
+                               duration = NULL,
+                               type = "message",
+                               closeButton = FALSE)
+
+        on.exit(removeNotification(id), add = TRUE)
 
         res <- DBI::dbGetQuery(con, query_sql)
 
@@ -146,9 +134,6 @@ mod_cons_cnae_cidades_server <- function(id){
       })
 
       output$dtable <- create_table({ data() })
-
-      #   Sys.sleep(0.25)
-      # }
 
     })
   })

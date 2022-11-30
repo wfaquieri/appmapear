@@ -20,7 +20,7 @@ mod_sobre_ui <- function(id){
       icon = icon("fa-solid fa-house-user"),
       markdown(
         "
-    ## app_MapeaR
+    ## Web App - Empresas
 
     <!-- badges: start -->
     [![Lifecycle:
@@ -33,11 +33,11 @@ mod_sobre_ui <- function(id){
 
     Até a presente versão, a consulta ao banco de dados pode ser realizada a partir:
 
-    * do cnpj >> Módulo: CNPJ - Empresa
+    * do cnpj >> Módulo: CNPJ
     * da atividade econômica e da unidade fedrativa >> Módulo: CNAE & UF
     * da atividade econômica e a nível municipal >> Módulo: CNAE & Cidades
 
-    Os dados foram obtidos em [Dados Públicos CNPJ - Receita Federal](https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/cadastros/consultas/dados-publicos-cnpj) e atualizados em 20/07/2022 .
+    Os dados foram obtidos em [Dados Públicos CNPJ - Receita Federal](https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica-cnpj) e atualizados em 20/07/2022 .
     "),
       hr()
     )
@@ -47,7 +47,7 @@ mod_sobre_ui <- function(id){
 #' sobre Server Functions
 #'
 #' @noRd
-mod_sobre_server <- function(id){
+mod_sobre_server <- function(id, res_auth){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
 

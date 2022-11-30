@@ -15,12 +15,16 @@ app_ui <- function(request) {
 
       # BARRA DE NAVEGAÇÃO
       header = bs4Dash::bs4DashNavbar(
-        title = bs4Dash::dashboardBrand(
-          title = "APP_MAPEAR",
-          color = "gray-dark",
-          href = "https://portalibre.fgv.br/quem-somos",
-          image = "www/company_22169.png",
-          opacity = 1.0
+        title = div(
+          img(
+            src = "https://portal.fgv.br/sites/portal.fgv.br/themes/portalfgv/logo.png",
+            style =
+                  "margin-top: 0px;
+                  padding-right:50px;
+                  padding-left:50px;
+                  padding-bottom:10px",
+            height = 50
+          )
         ),
         titleWidth = NULL,
         disable = FALSE,
@@ -34,6 +38,25 @@ app_ui <- function(request) {
 
       # BARRA LATERAL
       sidebar = bs4Dash::bs4DashSidebar(
+
+        tags$head(tags$style(type="text/css", "
+             #loadmessage {
+               position: fixed;
+               top: 0px;
+               left: 0px;
+               width: 100%;
+               padding: 5px 0px 5px 0px;
+               text-align: center;
+               font-weight: bold;
+               font-size: 100%;
+               color: #ffffff;
+               background-color: #343a40;
+               z-index: 105;
+             }
+          ")),
+        conditionalPanel(condition="$('html').hasClass('shiny-busy')",
+                         tags$div("Aguarde...",id="loadmessage")),
+
         disable = FALSE,
         skin = "light",
         status = "info",
@@ -86,7 +109,7 @@ app_ui <- function(request) {
             startExpanded = TRUE,
             icon = icon("fa-solid fa-magnifying-glass-chart"),
             bs4Dash::bs4SidebarMenuSubItem(
-              text = "Quantitativos",
+              text = "Visão Geral",
               tabName = "quant_id",
               href = NULL,
               newTab = NULL,
@@ -131,7 +154,7 @@ app_ui <- function(request) {
           ),
           bs4Dash::bs4TabItem(
             tabName = "cons_1_id",
-            # mod_consulta_ui("consulta_1")
+            mod_cons_cnpj_ui("cons_cnpj_1")
           ),
           bs4Dash::bs4TabItem(
             tabName = "cons_2_id",
@@ -143,15 +166,15 @@ app_ui <- function(request) {
           ),
           bs4Dash::bs4TabItem(
             tabName = "quant_id",
-            # mod_cons_cnae_mun_ui("cons_cnae_mun_1")
+            mod_overview_ui("overview_1")
           ),
           bs4Dash::bs4TabItem(
             tabName = "tabcnae_id",
             mod_tabela_cnae_ui("tabela_cnae_1")
           ),
           bs4Dash::bs4TabItem(
-            tabName = "layout",
-            # mod_cons_cnae_mun_ui("cons_cnae_mun_1")
+            tabName = "layout_id",
+            mod_layout_ui("layout_1")
           )
         ),
         fresh::use_theme(
@@ -173,7 +196,7 @@ app_ui <- function(request) {
       ),
       freshTheme = NULL,
       dark = NULL,
-      fullscreen = TRUE
+      fullscreen = FALSE
     )
   )
 }
@@ -200,5 +223,6 @@ golem_add_external_resources <- function() {
     )
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert()
+
   )
 }
