@@ -65,7 +65,7 @@ app_ui <- function(request) {
           bs4Dash::bs4SidebarMenuItem(
             text = "Home",
             startExpanded = TRUE,
-            icon = icon("fa-solid fa-house-user"),
+            icon = icon("house-user"),
             bs4Dash::bs4SidebarMenuSubItem(
               text = "Sobre",
               tabName = "about_id",
@@ -78,15 +78,7 @@ app_ui <- function(request) {
           bs4Dash::bs4SidebarMenuItem(
             text = "Consulta",
             startExpanded = TRUE,
-            icon = icon("fa-solid fa-magnifying-glass"),
-            bs4Dash::bs4SidebarMenuSubItem(
-              text = "CNPJ",
-              tabName = "cons_1_id",
-              href = NULL,
-              newTab = NULL,
-              icon = shiny::icon("angle-double-right"),
-              selected = NULL
-            ),
+            icon = icon("magnifying-glass"),
             bs4Dash::bs4SidebarMenuSubItem(
               text = "CNAE & UF",
               tabName = "cons_2_id",
@@ -102,12 +94,20 @@ app_ui <- function(request) {
               newTab = NULL,
               icon = shiny::icon("angle-double-right"),
               selected = NULL
+            ),
+            bs4Dash::bs4SidebarMenuSubItem(
+              text = "CNPJ",
+              tabName = "cons_1_id",
+              href = NULL,
+              newTab = NULL,
+              icon = shiny::icon("angle-double-right"),
+              selected = NULL
             )
           ),
           bs4Dash::bs4SidebarMenuItem(
             text = "Overview",
             startExpanded = TRUE,
-            icon = icon("fa-solid fa-magnifying-glass-chart"),
+            icon = icon("magnifying-glass-chart"),
             bs4Dash::bs4SidebarMenuSubItem(
               text = "Visão Geral",
               tabName = "quant_id",
@@ -120,7 +120,7 @@ app_ui <- function(request) {
           bs4Dash::bs4SidebarMenuItem(
             text = "Códigos CNAE",
             startExpanded = TRUE,
-            icon = icon("fa-solid fa-table-list"),
+            icon = icon("table-list"),
             bs4Dash::bs4SidebarMenuSubItem(
               text = "Tabela Completa",
               tabName = "tabcnae_id",
@@ -133,7 +133,7 @@ app_ui <- function(request) {
           bs4Dash::bs4SidebarMenuItem(
             text = "Layout",
             startExpanded = TRUE,
-            icon = icon("fa-solid fa-spell-check"),
+            icon = icon("spell-check"),
             bs4Dash::bs4SidebarMenuSubItem(
               text = "Dicionário de Dados",
               tabName = "layout_id",

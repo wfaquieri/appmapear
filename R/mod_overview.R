@@ -55,7 +55,7 @@ mod_overview_ui <- function(id){
       background = 'white',
       solidHeader = TRUE,
       width = 12,
-      icon = icon("fa-solid fa-magnifying-glass-chart"),
+      icon = icon("magnifying-glass-chart"),
 
       # FILTRO CNAE
       selectizeInput(
@@ -79,7 +79,7 @@ mod_overview_ui <- function(id){
       background = 'white',
       solidHeader = TRUE,
       width = 12,
-      icon = icon("fa-solid fa-magnifying-glass-chart"),
+      icon = icon("magnifying-glass-chart"),
 
       # FILTRO CNAE
       selectizeInput(

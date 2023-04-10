@@ -16,7 +16,7 @@ mod_cons_cnae_uf_ui <- function(id){
       background = 'gray-dark',
       solidHeader = TRUE,
       width = 4,
-      icon = icon("fa-solid fa-filter"),
+      icon = icon("filter"),
 
       # FILTRO CNAE
       selectizeInput(
@@ -72,6 +72,16 @@ mod_cons_cnae_uf_server <- function(id, res_auth){
       server = TRUE
     )
 
+    # Create a connection to a DBMS
+    con <- DBI::dbConnect(
+      RPostgres::Postgres(),
+      dbname = conn$db,
+      host = conn$db_host,
+      port = conn$db_port,
+      user = conn$db_user,
+      password = conn$db_pass
+    )
+
     observeEvent(input$goButton1, {
 
       data <-  reactive({
@@ -81,7 +91,7 @@ mod_cons_cnae_uf_server <- function(id, res_auth){
             "SELECT * FROM mvp_cons WHERE cnae_descr IN ({cnaes*}) AND uf IN ({states*})",
             cnaes = input$cnaeID,
             states = input$stateID,
-            .con = conn
+            .con = con
           )
 
         id <- showNotification("Executando a query...",

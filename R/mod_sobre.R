@@ -17,10 +17,10 @@ mod_sobre_ui <- function(id){
       background = 'gray-dark',
       solidHeader = TRUE,
       width = 10,
-      icon = icon("fa-solid fa-house-user"),
+      icon = icon("home"),
       markdown(
         "
-    ## Web App - Empresas
+    ## Sistema Web Empresas
 
     <!-- badges: start -->
     [![Lifecycle:
@@ -33,11 +33,11 @@ mod_sobre_ui <- function(id){
 
     Até a presente versão, a consulta ao banco de dados pode ser realizada a partir:
 
-    * do cnpj >> Módulo: CNPJ
-    * da atividade econômica e da unidade fedrativa >> Módulo: CNAE & UF
-    * da atividade econômica e a nível municipal >> Módulo: CNAE & Cidades
+    * da atividade econômica e da unidade fedrativa >> Módulo: CNAE & UF;
+    * da atividade econômica e a nível municipal >> Módulo: CNAE & Cidades;
+    * do cnpj >> Módulo: CNPJ.
 
-    Os dados foram obtidos em [Dados Públicos CNPJ - Receita Federal](https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica-cnpj) e atualizados em 20/07/2022 .
+    Os dados foram obtidos em [Dados Públicos CNPJ - Receita Federal](https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica-cnpj) e atualizados em: 25/11/2022 às 10:49:23.
     "),
       hr()
     )

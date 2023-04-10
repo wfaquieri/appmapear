@@ -16,7 +16,7 @@ mod_cons_cnpj_ui <- function(id){
       background = 'gray-dark',
       solidHeader = TRUE,
       width = 4,
-      icon = icon("fa-solid fa-filter"),
+      icon = icon("filter"),
 
       # FILTRO UF
       helpText("Digite o CNPJ de interesse: (Exemplo: 29593377000183)"),
@@ -47,6 +47,16 @@ mod_cons_cnpj_server <- function(id, res_auth){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
 
+    # Create a connection to a DBMS
+    con <- DBI::dbConnect(
+      RPostgres::Postgres(),
+      dbname = conn$db,
+      host = conn$db_host,
+      port = conn$db_port,
+      user = conn$db_user,
+      password = conn$db_pass
+    )
+
     observeEvent(input$goButton1, {
 
       data <-  reactive({
@@ -55,7 +65,7 @@ mod_cons_cnpj_server <- function(id, res_auth){
           glue::glue_sql(
             "SELECT * FROM mvp_cons WHERE cnpj IN ({cnpjs*})",
             cnpjs = input$cnpjID,
-            .con = conn
+            .con = con
           )
 
         id <- showNotification("Executando a query...",

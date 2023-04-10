@@ -17,7 +17,7 @@ mod_cons_cnae_cidades_ui <- function(id){
         background = 'gray-dark',
         solidHeader = TRUE,
         width = 4,
-        icon = icon("fa-solid fa-filter"),
+        icon = icon("filter"),
 
         # FILTRO CNAE
         selectizeInput(
@@ -69,8 +69,6 @@ mod_cons_cnae_cidades_server <- function(id, res_auth){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
 
-
-
     updateSelectizeInput(
       session,
       "cnaeID",
@@ -87,6 +85,16 @@ mod_cons_cnae_cidades_server <- function(id, res_auth){
       choices = sort(unique(uf_cities$uf)),
       selected = sort(unique(uf_cities$uf))[1],
       server = TRUE
+    )
+
+    # Create a connection to a DBMS
+    con <- DBI::dbConnect(
+      RPostgres::Postgres(),
+      dbname = conn$db,
+      host = conn$db_host,
+      port = conn$db_port,
+      user = conn$db_user,
+      password = conn$db_pass
     )
 
     observeEvent(D1(), {
@@ -117,7 +125,7 @@ mod_cons_cnae_cidades_server <- function(id, res_auth){
             cnaes = input$cnaeID,
             states = input$stateID,
             names = input$select,
-            .con = conn
+            .con = con
           )
 
         id <- showNotification("Executando a query...",
