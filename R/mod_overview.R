@@ -12,7 +12,7 @@ mod_overview_ui <- function(id){
   tagList(
     fluidRow(
       bs4Dash::bs4ValueBox(
-        value = tags$p(tot$count |> prettyNum(big.mark = "."), style = "font-size: 250%;"),
+        value = tags$p(tot$count |> as.numeric() |> prettyNum(big.mark = ".", decimal.mark = ","), style = "font-size: 250%;"),
         tags$p("Total de Empresas Ativas", style = "font-size: 110%;"),
         color = "info",
         elevation = NULL,

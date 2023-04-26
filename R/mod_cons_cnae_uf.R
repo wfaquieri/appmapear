@@ -32,7 +32,7 @@ mod_cons_cnae_uf_ui <- function(id){
         inputId = ns("stateID"),
         "UF:",
         choices = NULL,
-        multiple = F
+        multiple = T
       ),
 
       # BOTÃO PESQUISAR

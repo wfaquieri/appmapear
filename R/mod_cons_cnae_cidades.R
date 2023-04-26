@@ -33,7 +33,7 @@ mod_cons_cnae_cidades_ui <- function(id){
           inputId = ns("stateID"),
           "UF:",
           choices = NULL,
-          multiple = F
+          multiple = T
         ),
 
         # FILTRO MUNICIPIO
