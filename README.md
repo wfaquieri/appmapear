@@ -1,6 +1,12 @@
 Sistema Web Empresas
 ================
 
+<!-- badges: start -->
+
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+
 O Sistema Web Empresas é uma ferramenta que visa democratizar o acesso à
 base de dados da Receita Federal, no âmbito da SPDO, atendendo as
 demandas de mapeamento e cadastro, bem como estimativas de amostras com
@@ -41,8 +47,8 @@ Veja abaixo uma demonstração do Sistema Web Empresas:
 
 ![Demonstração do Sistema Web Empresas](demo.gif)
 
-Clique [aqui](https://www.meuapp.com/demo) para ver a demonstração em
-tamanho maior.
+Clique [aqui](https://github.com/wfaquieri/appmapear/blob/main/demo.gif)
+para ver a demonstração em tamanho maior.
 
 ## Contribuição
 

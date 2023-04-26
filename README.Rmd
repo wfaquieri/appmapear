@@ -7,6 +7,11 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+<!-- badges: start -->
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+    
 O Sistema Web Empresas é uma ferramenta que visa democratizar o acesso à base de dados da Receita Federal, no âmbito da SPDO, atendendo as demandas de mapeamento e cadastro, bem como estimativas de amostras com empresas válidas e outros tipos de prospeções comerciais.
 
 ## Funcionalidades
@@ -19,7 +24,7 @@ Através de uma interface amigável e de fácil acesso, o <app> permite a consul
 
 - Consulta por CNPJ >> Módulo: CNPJ.
 
-Os dados foram obtidos em Dados Públicos CNPJ - Receita Federal e atualizados em: 25/11/2022 às 10:49:23.
+Os dados foram obtidos em Dados Públicos CNPJ - Receita Federal e atualizados em: 12/04/2023 18:43:55.
 
 ## Status do Projeto
 
@@ -35,7 +40,7 @@ Veja abaixo uma demonstração do Sistema Web Empresas:
 
 ![Demonstração do Sistema Web Empresas](demo.gif)
 
-Clique [aqui](https://www.meuapp.com/demo) para ver a demonstração em tamanho maior.
+Clique [aqui](https://github.com/wfaquieri/appmapear/blob/main/demo.gif) para ver a demonstração em tamanho maior.
 
 ## Contribuição
 
