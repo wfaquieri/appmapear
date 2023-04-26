@@ -1,0 +1,52 @@
+
+R version 4.2.1 (2022-06-23 ucrt) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R é um software livre e vem sem GARANTIA ALGUMA.
+Você pode redistribuí-lo sob certas circunstâncias.
+Digite 'license()' ou 'licence()' para detalhes de distribuição.
+
+R é um projeto colaborativo com muitos contribuidores.
+Digite 'contributors()' para obter mais informações e
+'citation()' para saber como citar o R ou pacotes do R em publicações.
+
+Digite 'demo()' para demonstrações, 'help()' para o sistema on-line de ajuda,
+ou 'help.start()' para abrir o sistema de ajuda em HTML no seu navegador.
+Digite 'q()' para sair do R.
+
+> #'    .-------------------------------------------------------.
+> #'    | FGV  - Fundacao Getulio Vargas                        |
+> #'    | IBRE - Instituto Brasileiro de Economia               |
+> #'    | SPDO - Superintendência de Pesquisa, Dados e Operação |
+> #'    | Data inicial : 01/2023                                |
+> #'    | ID do codigo : appmapear                              |
+> #'    | versao       : 0.0.0.9000                             |
+> #'    | Responsavel  : Winicius B Faquieri                    |
+> #'    | Email        : winicius.faquieri@fgv.br               |
+> #'    '-------------------------------------------------------'
+> #'
+> #'
+> #'
+> #'
+> #' > Run all!! 'Ctrl + Alt + R'
+> #'
+> #'
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> devtools::load_all(".")
+ℹ Loading appmapear
+> 
+> appmapear::run_app()
+Carregando pacotes exigidos: shiny
+
+Listening on http://127.0.0.1:4242

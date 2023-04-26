@@ -1,0 +1,54 @@
+
+R version 4.2.2 (2022-10-31 ucrt) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R é um software livre e vem sem GARANTIA ALGUMA.
+Você pode redistribuí-lo sob certas circunstâncias.
+Digite 'license()' ou 'licence()' para detalhes de distribuição.
+
+R é um projeto colaborativo com muitos contribuidores.
+Digite 'contributors()' para obter mais informações e
+'citation()' para saber como citar o R ou pacotes do R em publicações.
+
+Digite 'demo()' para demonstrações, 'help()' para o sistema on-line de ajuda,
+ou 'help.start()' para abrir o sistema de ajuda em HTML no seu navegador.
+Digite 'q()' para sair do R.
+
+> 
+> (WD <- getwd())
+[1] "C:/Users/winicius.faquieri/OneDrive - FGV/Documentos/appmapear3"
+> if (!is.null(WD)) setwd(WD)
+> 
+> require(shiny)
+Carregando pacotes exigidos: shiny
+> folder_address = WD
+> runApp(folder_address, launch.browser=TRUE)
+Warning in loadSupport(appDir, renv = sharedEnv, globalrenv = NULL) :
+  Loading R/ subdirectory for Shiny application, but this directory appears to contain an R package. Sourcing files in R/ may cause unexpected behavior.
+ℹ Loading appmapear
+
+Listening on http://127.0.0.1:4242
+The `name` provided ('fa-solid fa-house-user') does not correspond to a known icon
+The `name` provided ('fa-solid fa-magnifying-glass') does not correspond to a known icon
+The `name` provided ('fa-solid fa-magnifying-glass-chart') does not correspond to a known icon
+The `name` provided ('fa-solid fa-table-list') does not correspond to a known icon
+The `name` provided ('fa-solid fa-spell-check') does not correspond to a known icon
+The `name` provided ('fa fa-home') does not correspond to a known icon
+The `name` provided ('fa-solid fa-filter') does not correspond to a known icon
+The `name` provided ('fa-solid fa-filter') does not correspond to a known icon
+The `name` provided ('fa-solid fa-filter') does not correspond to a known icon
+Warning in prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L,  :
+  'big.mark' and 'decimal.mark' are both '.', which could be confusing
+Warning in prettyNum(tot$count, big.mark = ".") :
+  'big.mark' and 'decimal.mark' are both '.', which could be confusing
+Warning in prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L,  :
+  'big.mark' and 'decimal.mark' are both '.', which could be confusing
+Warning in prettyNum(nrow(df_cnae), big.mark = ".") :
+  'big.mark' and 'decimal.mark' are both '.', which could be confusing
+Warning in prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L,  :
+  'big.mark' and 'decimal.mark' are both '.', which could be confusing
+Warning in prettyNum(nrow(uf_cities), big.mark = ".") :
+  'big.mark' and 'decimal.mark' are both '.', which could be confusing
+The `name` provided ('fa-solid fa-magnifying-glass-chart') does not correspond to a known icon
+The `name` provided ('fa-solid fa-magnifying-glass-chart') does not correspond to a known icon

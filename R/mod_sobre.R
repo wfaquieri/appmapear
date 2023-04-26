@@ -37,7 +37,7 @@ mod_sobre_ui <- function(id){
     * da atividade econômica e a nível municipal >> Módulo: CNAE & Cidades;
     * do cnpj >> Módulo: CNPJ.
 
-    Os dados foram obtidos em [Dados Públicos CNPJ - Receita Federal](https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica-cnpj) e atualizados em: 15/03/2023.
+    Os dados foram obtidos em [Dados Públicos CNPJ - Receita Federal](https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica-cnpj) e atualizados em: 25/11/2022 às 10:49:23.
     "),
       hr()
     )
